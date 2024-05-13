@@ -93,27 +93,38 @@
         .titulo-loja {
             color: #FFCC04;
             text-align: center;
+            font-size: 50px;
         }
         .tempo-entrega {
             color: black;
             text-align: center;     
-            margin-bottom: 1em;       
+            margin-bottom: 1em;  
+            font-size: 30px;     
         }
         .titulo-categoria {
             color: black;
-            text-align: center; 
+            text-align: center;
+            font-size: 45px;
         }
         .componente-produto {
             background-color: #FFCC04;
             margin: 0.5em;
-            height: 20em;
+            height: 31em;
             border-radius: 5px;
             padding: 1em;
+            width: 100%;
+            margin-right: 0;
         }
         .componente-produto img {
-            max-height: 18em;
+            max-height: 30em;
             border-radius: 5px;
-            border-top: 10px;
+            border-top: 20px;
+        }
+
+        /* preço preto */
+        .preco-preto {
+            color: white; 
+            font-size: 25px;
         }
 
         /* Estilizando os botões de rádio */
@@ -138,25 +149,36 @@
         /* Estilo dos botões de tamanho */
         .tamanho {
             display: inline-block;
-            width: 50px;
-            height: 50px;
-            border: 1px solid #ccc;
+            width: 90px;
+            height: 90px;
+            border: 1px solid #636161;
             margin: 5px;
             text-align: center;
-            line-height: 50px;
+            line-height: 90px;
             cursor: pointer;
+            font-size: 40px;
         }
         .selecionado {
             background-color: #f0f0f0;
-            border: 2px solid blue;
+            border: 2px solid rgb(11, 236, 98);
         }
+
+        /* Modal grande */
+        .modal-dialog {
+            max-width: 100%;
+            max-height: 100%;
+            margin-top: 15em;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="top-bar">
         <img src="img/Cabecalho.JPG" alt="Capa loja roupa fitnes esportivas" class="background-image">
-        <img src="img/ImgRedonda.JPG" alt="logo Vica Store" class="profile-image">
+        <img src="img/ImgRedonda.jpeg" alt="logo Vica Store" class="profile-image">
     </div>
     
     <div class="content">
@@ -166,146 +188,146 @@
 
         <h2 class="titulo-categoria" alt="Sessão Calças Leggings">Calças Leggings</h2>
 
-        <div class="content" style="margin-bottom: 70px;">     
+        <div class="content" style="margin-bottom: 70px; margin-right: 0;">     
               
-            <div class="container" ID="produto_1" onclick="abrirModal('produto_1', 'img/produtos/legging-aracaju.webp', 'img/produtos/legging-aracaju2.webp')">                                
-                    <div class="row span_12 componente-produto">
+            <div class="container" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;" ID="produto_1" onclick="abrirModal('produto_1', 'img/produtos/legging-aracaju.webp', 'img/produtos/legging-aracaju2.webp')">                                
+                    <div class="row span_12 componente-produto" style="max-width: 100%;">
                         
-                        <div class="col span_1" style="max-width: 18em;">
+                        <div class="col span_1" style="max-width: 21em;">
                             <img src="img/produtos/legging-aracaju.webp" alt="Calça legging aracaju" class="img-fluid">
                         </div> 
                                                     
-                        <div class="col span_10">
-                            <div class="col span_12">
-                                <b ID="nome-produto_1" style="color: white;" alt="calça legging fitnes academia esportes" >Calça legging estampa localizada digital Aracaju. P ou G</b>
+                        <div class="col span_11" style="max-width: 100%;">
+                            <div class="col span_12" style="max-width: 100%;">
+                                <b ID="nome-produto_1" style="color: white; font-size: 30px;" alt="calça legging fitnes academia esportes" >Calça legging estampa localizada digital Aracaju. P ou G</b>
                             </div>
                             <div class="col span_12">
-                                <p ID="descricao-produto_1" style="text-decoration: none;">Calça legging de média compressão.
+                                <p ID="descricao-produto_1" style="text-decoration: none; font-size: 25px;">Calça legging de média compressão.
                                     Para quem está procurando conforto, qualidade e estilo esta é a peça ideal.
                                     Conta com uma estampa exclusiva e moderna, sublimada em um tecido de alta qualidade, possui cós anatômico, que proporciona maior conforto e segurança em seu treino ou dia a dia.</p>
                             </div> 
-                            <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">                                                                 
-                                <b ID="preco-produto_1" class="fs-6" style="color: white;">R$ 59,90</b>                                                               
+                            <div class="col-md-auto ms-auto" style="background-color: black; max-width: 10em; border-radius: 5px;">                                                                 
+                                <b ID="preco-produto_1" class="fs-6" style="color: white; font-size: 25px;">R$ 59,90</b>                                                               
                             </div> 
                         </div>                                                                                     
                     </div>                    
             </div>
             
-            <div class="container" ID="produto_2" onclick="abrirModal('produto_2', 'img/produtos/legging-basica-verde-agua.webp', 'img/produtos/legging-basica-verde-agua2.webp')">
-                <div class="row span_12 componente-produto">
+            <div class="container" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;" ID="produto_2" onclick="abrirModal('produto_2', 'img/produtos/legging-basica-verde-agua.webp', 'img/produtos/legging-basica-verde-agua2.webp')">
+                <div class="row span_12 componente-produto" style="max-width: 100%;">
                     
-                    <div class="col span_1" style="max-width: 18em;">
+                    <div class="col span_1" style="max-width: 21em;">
                         <img src="img/produtos/legging-basica-verde-agua.webp" alt="Imagem do Produto" class="img-fluid">
                     </div> 
                                                 
-                    <div class="col span_10">
-                        <div class="col span_12">
-                            <b ID="nome-produto_2" style="color: white;">Calça legging básica Verde Agua. GG</b>
+                    <div class="col span_11" style="max-width: 100%;">
+                        <div class="col span_12" style="max-width: 100%;">
+                            <b ID="nome-produto_2" style="color: white; font-size: 30px;">Calça legging básica Verde Agua. GG</b>
                         </div>
                         <div class="col span_12">
-                            <p ID="descricao-produto_2">Calça legging de média compressão.
+                            <p ID="descricao-produto_2" style="text-decoration: none; font-size: 25px;">Calça legging de média compressão.
                                 Para quem está procurando conforto e qualidade sem fugir do básico esta é a peça ideal.
                                 A calça básica é uma peça coringa que não pode faltar em seu guarda-roupa.
                                 Possui o cós alto proporcionando mais conforto e segurança durante a prática esportiva..</p>
                         </div> 
-                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
-                            <b ID="preco-produto_2" class="fs-6" style="color: white;"> R$ 79,90</b>
+                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 10em; border-radius: 5px;">
+                            <b ID="preco-produto_2" class="fs-6" style="color: white; font-size: 25px;"> R$ 79,90</b>
                         </div> 
                     </div> 
                                                                                   
                 </div>
             </div>
 
-            <div class="container" ID="produto_3" onclick="abrirModal('produto_3', 'img/produtos/legging-coffea.webp', 'img/produtos/legging-coffea2.webp')">
-                <div class="row span_12 componente-produto">
+            <div class="container" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;" ID="produto_3" onclick="abrirModal('produto_3', 'img/produtos/legging-coffea.webp', 'img/produtos/legging-coffea2.webp')">
+                <div class="row span_12 componente-produto" style="max-width: 100%;">
                     
-                    <div class="col span_1" style="max-width: 18em;">
+                    <div class="col span_1" style="max-width: 21em;">
                         <img src="img/produtos/legging-coffea.webp" alt="Imagem do Produto" class="img-fluid">
                     </div> 
                                                 
-                    <div class="col span_10">
-                        <div class="col span_12">
-                            <b ID="nome-produto_3" style="color: white;">Calça legging estampa localizada digital COFFEA. M</b>
+                    <div class="col span_11" style="max-width: 100%;">
+                        <div class="col span_12" style="max-width: 100%;">
+                            <b ID="nome-produto_3" style="color: white; font-size: 30px;">Calça legging estampa localizada digital COFFEA. M</b>
                         </div>
                         <div class="col span_12">
-                            <p ID="descricao-produto_3">Calça legging de média compressão.
+                            <p ID="descricao-produto_3" style="text-decoration: none; font-size: 25px;">Calça legging de média compressão.
                                 Para quem está procurando conforto, qualidade e estilo esta é a peça ideal.
                                 Conta com uma estampa exclusiva e moderna, sublimada em um tecido de alta qualidade, possui cós anatômico, que proporciona maior conforto e segurança em seu treino ou dia a dia.</p>
                         </div> 
-                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
-                            <b ID="preco-produto_3" class="fs-6" style="color: white;"> R$ 59,90</b>
+                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 10em; border-radius: 5px;">
+                            <b ID="preco-produto_3" class="fs-6" style="color: white; font-size: 25px;"> R$ 59,90</b>
                         </div> 
                     </div> 
                                                                                   
                 </div>
             </div>
 
-            <div class="container" ID="produto_4" onclick="abrirModal('produto_4', 'img/produtos/legging-digital-malus.webp', 'img/produtos/legging-digital-malus2.webp')">
+            <div class="container" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;" ID="produto_4" onclick="abrirModal('produto_4', 'img/produtos/legging-digital-malus.webp', 'img/produtos/legging-digital-malus2.webp')">
                 <div class="row span_12 componente-produto">
                     
-                    <div class="col span_1" style="max-width: 18em;">
+                    <div class="col span_1" style="max-width: 21em;">
                         <img src="img/produtos/legging-digital-malus.webp" alt="Imagem do Produto" class="img-fluid">
                     </div> 
                                                 
-                    <div class="col span_10">
-                        <div class="col span_12">
-                            <b ID="nome-produto_4" style="color: white;">Calça legging estampa localizada digital MALUS. P ou G</b>
+                    <div class="col span_11" style="max-width: 100%;">
+                        <div class="col span_12" style="max-width: 100%;">
+                            <b ID="nome-produto_4" style="color: white; font-size: 30px;">Calça legging estampa localizada digital MALUS. P ou G</b>
                         </div>
                         <div class="col span_12">
-                            <p ID="descricao-produto_4">Calça legging de média compressão.
+                            <p ID="descricao-produto_4" style="text-decoration: none; font-size: 25px;">Calça legging de média compressão.
                                 Para quem está procurando conforto, qualidade e estilo esta é a peça ideal.
                                 Conta com uma estampa exclusiva e moderna, sublimada em um tecido de alta qualidade, possui cós anatômico, que proporciona maior conforto e segurança em seu treino ou dia a dia.</p>
                         </div> 
-                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
-                            <b ID="preco-produto_4" class="fs-6" style="color: white;"> R$ 69,90</b>
+                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 10em; border-radius: 5px;">
+                            <b ID="preco-produto_4" class="fs-6 preco-preto" > R$ 69,90</b>
                         </div> 
                     </div> 
                                                                                   
                 </div>
             </div>
 
-            <div class="container" ID="produto_5" onclick="abrirModal('produto_5', 'img/produtos/legging-isis.webp', 'img/produtos/legging-isis2.webp')">
+            <div class="container" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;" ID="produto_5" onclick="abrirModal('produto_5', 'img/produtos/legging-isis.webp', 'img/produtos/legging-isis2.webp')">
                 <div class="row span_12 componente-produto">
                     
-                    <div class="col span_1" style="max-width: 18em;">
+                    <div class="col span_1" style="max-width: 21em;">
                         <img src="img/produtos/legging-isis.webp" alt="Imagem do Produto" class="img-fluid">
                     </div> 
                                                 
-                    <div class="col span_10">
+                    <div class="col span_11">
                         <div class="col span_12">
-                            <b ID="nome-produto_5" style="color: white;">Calça legging estampa localizada digital Isis. G</b>
+                            <b ID="nome-produto_5" style="color: white; font-size: 30px;">Calça legging estampa localizada digital Isis. G</b>
                         </div>
                         <div class="col span_12">
-                            <p ID="descricao-produto_5">Calça legging de média compressão.
+                            <p ID="descricao-produto_5" style="text-decoration: none; font-size: 25px;">Calça legging de média compressão.
                                 Para quem está procurando conforto, qualidade e estilo esta é a peça ideal.
                                 Conta com uma estampa exclusiva e moderna, sublimada em um tecido de alta qualidade, possui cós anatômico, que proporciona maior conforto e segurança em seu treino ou dia a dia.</p>
                         </div> 
-                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
-                            <b ID="preco-produto_5" class="fs-6" style="color: white;"> R$ 59,90</b>
+                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 10em; border-radius: 5px;">
+                            <b ID="preco-produto_5" class="fs-6 preco-preto" style="color: white;"> R$ 59,90</b>
                         </div> 
                     </div> 
                                                                                   
                 </div>
             </div>
 
-            <div class="container" ID="produto_6" onclick="abrirModal('produto_6', 'img/produtos/legging-zea.webp', 'img/produtos/legging-zea2.webp')">
+            <div class="container" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;" ID="produto_6" onclick="abrirModal('produto_6', 'img/produtos/legging-zea.webp', 'img/produtos/legging-zea2.webp')">
                 <div class="row span_12 componente-produto">
                     
-                    <div class="col span_1" style="max-width: 18em;">
+                    <div class="col span_1" style="max-width: 21em;">
                         <img src="img/produtos/legging-zea.webp" alt="Imagem do Produto" class="img-fluid">
                     </div> 
                                                 
-                    <div class="col span_10">
+                    <div class="col span_11">
                         <div class="col span_12">
-                            <b ID="nome-produto_6" style="color: white;">Calça legging estampa localizada digital ZEA. G</b>
+                            <b ID="nome-produto_6" style="color: white; font-size: 30px;">Calça legging estampa localizada digital ZEA. G</b>
                         </div>
                         <div class="col span_12">
-                            <p ID="descricao-produto_6" >Calça legging de média compressão.
+                            <p ID="descricao-produto_6" style="text-decoration: none; font-size: 25px;">Calça legging de média compressão.
                                 Para quem está procurando conforto, qualidade e estilo esta é a peça ideal.
                                 Conta com uma estampa exclusiva e moderna, sublimada em um tecido de alta qualidade, possui cós anatômico, que proporciona maior conforto e segurança em seu treino ou dia a dia.</p>
                         </div> 
-                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
-                            <b ID="preco-produto_6" class="fs-6" style="color: white;"> R$ 59,90</b>
+                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 10em; border-radius: 5px;">
+                            <b ID="preco-produto_6" class="fs-6 preco-preto" > R$ 59,90</b>
                         </div> 
                     </div> 
                                                                                   
@@ -318,118 +340,118 @@
 
         <div class="content" style="margin-bottom: 90px;"> 
 
-            <div class="container" ID="produto_7" onclick="abrirModal('produto_7', 'img/produtos/top-conforto-cirre-marinho.webp', 'img/produtos/top-conforto-cirre-marinho2.webp')">
+            <div class="container" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;" ID="produto_7" onclick="abrirModal('produto_7', 'img/produtos/top-conforto-cirre-marinho.webp', 'img/produtos/top-conforto-cirre-marinho2.webp')">
                 <div class="row span_12 componente-produto">
                     
-                    <div class="col span_1" style="max-width: 18em;">
+                    <div class="col span_1" style="max-width: 21em;">
                         <img src="img/produtos/top-conforto-cirre-marinho.webp" alt="Imagem do Produto" class="img-fluid">
                     </div> 
                                                 
-                    <div class="col span_10">
+                    <div class="col span_11">
                         <div class="col span_12">
-                            <b ID="nome-produto_7" style="color: white;">Top conforto de cirre com alça fina e cós na cintura Marinho. G</b>
+                            <b ID="nome-produto_7" style="color: white; font-size: 30px;">Top conforto de cirre com alça fina e cós na cintura Marinho. G</b>
                         </div>
                         <div class="col span_12">
-                            <p ID="descricao-produto_7">Para quem esta procurando conforto e perfeição, esta peça foi feita para você.
+                            <p ID="descricao-produto_7" style="text-decoration: none; font-size: 25px;">Para quem esta procurando conforto e perfeição, esta peça foi feita para você.
                                 O top conforto de cirre é uma peça que possui alta tecnologia para seus treinos, ele não possui bojo, porem seu forro é duplo, eliminando a transparência. Top de média compressão proporcionando total conforto durante a prática esportiva.</p>
                         </div> 
-                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
-                            <b ID="preco-produto_7" class="fs-6" style="color: white;"> R$ 59,90</b>
+                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 10em; border-radius: 5px;">
+                            <b ID="preco-produto_7" class="fs-6 preco-preto"> R$ 59,90</b>
                         </div> 
                     </div> 
                                                                                   
                 </div>
             </div>
 
-            <div class="container" ID="produto_8" onclick="abrirModal('produto_8', 'img/produtos/top-conforto-galapagos.webp', 'img/produtos/top-conforto-galapagos2.webp')">
+            <div class="container" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;" ID="produto_8" onclick="abrirModal('produto_8', 'img/produtos/top-conforto-galapagos.webp', 'img/produtos/top-conforto-galapagos2.webp')">
                 <div class="row span_12 componente-produto">
                     
-                    <div class="col span_1" style="max-width: 18em;">
+                    <div class="col span_1" style="max-width: 21em;">
                         <img src="img/produtos/top-conforto-galapagos.webp" alt="Imagem do Produto" class="img-fluid">
                     </div> 
                                                 
-                    <div class="col span_10">
+                    <div class="col span_11">
                         <div class="col span_12">
-                            <b ID="nome-produto_8" style="color: white;">Top conforto com alça fina e cós na cintura Galapagos. P</b>
+                            <b ID="nome-produto_8" style="color: white; font-size: 30px;">Top conforto com alça fina e cós na cintura Galapagos. P</b>
                         </div>
                         <div class="col span_12">
-                            <p ID="descricao-produto_8">Para quem está procurando conforto e sustentação, essa peça foi feita para você.
+                            <p ID="descricao-produto_8" style="text-decoration: none; font-size: 25px;">Para quem está procurando conforto e sustentação, essa peça foi feita para você.
                                 O top conforto estampado é uma peça que possui alta tecnologia, não possui bojo, com uma estampa moderna e seu forro duplo elimina possíveis transparências, proporcionando total conforto e segurança durante a prática esportiva.</p>
                         </div> 
-                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
-                            <b ID="preco-produto_8" class="fs-6" style="color: white;"> R$ 77,90</b>
+                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 10em; border-radius: 5px;">
+                            <b ID="preco-produto_8" class="fs-6 preco-preto" > R$ 77,90</b>
                         </div> 
                     </div> 
                                                                                   
                 </div>
             </div>
 
-            <div class="container" ID="produto_9" onclick="abrirModal('produto_9', 'img/produtos/top-conforto-glycine.webp', 'img/produtos/top-conforto-glycine2.webp')">
+            <div class="container" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;" ID="produto_9" onclick="abrirModal('produto_9', 'img/produtos/top-conforto-glycine.webp', 'img/produtos/top-conforto-glycine2.webp')">
                 <div class="row span_12 componente-produto">
                     
-                    <div class="col span_1" style="max-width: 18em;">
+                    <div class="col span_1" style="max-width: 21em;">
                         <img src="img/produtos/top-conforto-glycine.webp" alt="Imagem do Produto" class="img-fluid">
                     </div> 
                                                 
-                    <div class="col span_10">
+                    <div class="col span_11">
                         <div class="col span_12">
-                            <b ID="nome-produto_9" style="color: white;">Top conforto com alça fina e cós na cintura GLYCINE. P</b>
+                            <b ID="nome-produto_9" style="color: white; font-size: 30px;">Top conforto com alça fina e cós na cintura GLYCINE. P</b>
                         </div>
                         <div class="col span_12">
-                            <p ID="descricao-produto_9">Top de média compressão.
+                            <p ID="descricao-produto_9" style="text-decoration: none; font-size: 25px;">Top de média compressão.
                                 Para quem está procurando conforto e sustentação, essa peça foi feita para você.
                                 O top conforto estampado é uma peça que possui alta tecnologia, não possui bojo, com uma estampa moderna e seu forro duplo elimina possíveis transparências, proporcionando total conforto e segurança durante a prática esportiva.</p>
                         </div> 
-                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
-                            <b ID="preco-produto_9" class="fs-6" style="color: white;"> R$ 59,90</b>
+                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 10em; border-radius: 5px;">
+                            <b ID="preco-produto_9" class="fs-6 preco-preto"> R$ 59,90</b>
                         </div> 
                     </div> 
                                                                                   
                 </div>
             </div>
 
-            <div class="container" ID="produto_10" onclick="abrirModal('produto_10', 'img/produtos/top-conforto-rotativo-cereja.webp', 'img/produtos/top-conforto-rotativo-cereja2.webp')">
+            <div class="container" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;" ID="produto_10" onclick="abrirModal('produto_10', 'img/produtos/top-conforto-rotativo-cereja.webp', 'img/produtos/top-conforto-rotativo-cereja2.webp')">
                 <div class="row span_12 componente-produto">
                     
-                    <div class="col span_1" style="max-width: 18em;">
+                    <div class="col span_1" style="max-width: 21em;">
                         <img src="img/produtos/top-conforto-rotativo-cereja.webp" alt="Imagem do Produto" class="img-fluid">
                     </div> 
                                                 
-                    <div class="col span_10">
+                    <div class="col span_11">
                         <div class="col span_12">
-                            <b ID="nome-produto_10" style="color: white;">Top conforto com alça fina e cós na cintura rotativo CEREJA. M</b>
+                            <b ID="nome-produto_10" style="color: white; font-size: 30px;">Top conforto com alça fina e cós na cintura rotativo CEREJA. M</b>
                         </div>
                         <div class="col span_12">
-                            <p ID="descricao-produto_10">Top de média compressão.
+                            <p ID="descricao-produto_10" style="text-decoration: none; font-size: 25px;">Top de média compressão.
                                 Para quem está procurando conforto e sustentação, essa peça foi feita para você.                                
                                 O top conforto estampado é uma peça que possui alta tecnologia, não possui bojo, com uma estampa moderna e seu forro duplo elimina possíveis transparências, proporcionando total conforto e segurança durante a prática esportiva.</p>
                         </div> 
-                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
-                            <b ID="preco-produto_10" class="fs-6" style="color: white;"> R$ 57,90</b>
+                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 10em; border-radius: 5px;">
+                            <b ID="preco-produto_10" class="fs-6 preco-preto" > R$ 57,90</b>
                         </div> 
                     </div> 
                                                                                   
                 </div>
             </div>
 
-            <div class="container" ID="produto_11" onclick="abrirModal('produto_11', 'img/produtos/top-conforto-zea.webp', 'img/produtos/top-conforto-zea2.webp')">
+            <div class="container" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;" ID="produto_11" onclick="abrirModal('produto_11', 'img/produtos/top-conforto-zea.webp', 'img/produtos/top-conforto-zea2.webp')">
                 <div class="row span_12 componente-produto">
                     
-                    <div class="col span_1" style="max-width: 18em;">
+                    <div class="col span_1" style="max-width: 21em;">
                         <img src="img/produtos/top-conforto-zea.webp" alt="Imagem do Produto" class="img-fluid">
                     </div> 
                                                 
-                    <div class="col span_10">
+                    <div class="col span_11">
                         <div class="col span_12">
-                            <b ID="nome-produto_11" style="color: white;">Top conforto com alça fina e cós na cintura ZEA. G</b>
+                            <b ID="nome-produto_11" style="color: white; font-size: 30px;">Top conforto com alça fina e cós na cintura ZEA. G</b>
                         </div>
                         <div class="col span_12">
-                            <p ID="descricao-produto_11">Top de média compressão.
+                            <p ID="descricao-produto_11" style="text-decoration: none; font-size: 25px;">Top de média compressão.
                                 Para quem está procurando conforto e sustentação, essa peça foi feita para você.
                                 O top conforto estampado é uma peça que possui alta tecnologia, não possui bojo, com uma estampa moderna e seu forro duplo elimina possíveis transparências, proporcionando total conforto e segurança durante a prática esportiva.</p>
                         </div> 
-                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
-                            <b ID="preco-produto_11" class="fs-6" style="color: white;"> R$ 49,90</b>
+                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 10em; border-radius: 5px;">
+                            <b ID="preco-produto_11" class="fs-6 preco-preto"> R$ 49,90</b>
                         </div> 
                     </div> 
                                                                                   
@@ -475,18 +497,18 @@
             <div class="modal-content bg-warning"> <!-- Adicione a classe bg-warning aqui -->
                           
                 <!-- Modal Body -->
-                <div class="modal-body container span_12">
+                <div class="modal-body container span_12" style="margin-right: 5px; margin-left: 5px; max-height: 100%; max-width: 100%;">
                     <button ID="btnFecharModal" type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
-                    <h4 ID="nome-item-modal" style="color: white; margin-left: 0.5em;"></h4>
-                    <div class="row justify-content-center" style="margin: 0.5em; border-radius: 5px; max-height: 15em; margin-bottom: 5em;">            
+                    <h4 ID="nome-item-modal" style="color: white; font-size: 30px;"></h4>
+                    <div class="row justify-content-center" style="margin: 0.5em; border-radius: 5px; max-height: 40em; max-width: 30em; margin-left: 12em; margin-bottom: 5em;">            
 
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                               <div class="carousel-item active">
-                                <img ID="img-1" src="" class="d-block w-100" style="height: 100%; max-height: 18em;" alt="Aracaju Frente">
+                                <img ID="img-1" src="" class="d-block w-100" style="max-height: 100%; max-width: 100%;" alt="Aracaju Frente">
                               </div>
                               <div class="carousel-item">
-                                <img ID="img-2" src="" class="d-block w-100" style="height: 100%; max-height: 18em;" alt="Aracaju Costas">
+                                <img ID="img-2" src="" class="d-block w-100" style="max-height: 100%; max-width: 100%;" alt="Aracaju Costas">
                               </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -497,17 +519,17 @@
                               <span class="carousel-control-next-icon" aria-hidden="true"></span>
                               <span class="sr-only">Next</span>
                             </a>
-                          </div>
+                        </div>
 
                     </div>
-                    <div style="margin: 1em;">
-                        <p ID="descricao-modal"></p>
+                    <div style="margin: 1em; max-width: 100%;">
+                        <p ID="descricao-modal" style="text-decoration: none; font-size: 25px; max-width: 100%;"></p>
                     </div>
                 
                     <div style="margin: 1em;">
-                        <b ID="preco-modal" style="color: white;"></b>
+                        <b ID="preco-modal" class="preco-preto"></b>
                         <br>
-                        <p ID="frase-parcela" style="color: white;"></p>
+                        <p ID="frase-parcela" class="preco-preto"></p>
                     </div>
 
                     <div id="opcoesTamanho">
@@ -518,7 +540,7 @@
                     </div>
                 
                     <div style="margin: 1em;">
-                        <b>Observação</b>
+                        <b style="font-size: 25px;">Observação</b>
                     </div>
                 
                     <div class="row" style="margin: 1em;">
@@ -533,16 +555,16 @@
                 <div class="modal-footer d-flex justify-content-between">
                     <div ID="divQuantidadeProduto">
                         <a class="navbar-brand" href="#" style="margin-right: 0;">
-                            <img src="img/botao-de-menos.png" alt="Diminuir quantidade">                        
+                            <img src="img/botao-de-menos.png" style="width: 45px; height: 45px;" alt="Diminuir quantidade">                        
                         </a>                    
-                        <b style="margin: 1em;">1</b>
+                        <b style="margin: 1em; font-size: 30px;">1</b>
                         <a class="navbar-brand" href="#">
-                            <img src="img/botao-mais.png" alt="Aumentar quantidade">                        
+                            <img src="img/botao-mais.png" style="width: 45px; height: 45px;" alt="Aumentar quantidade">                        
                         </a>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-dark" data-dismiss="modal" style="background-color: black;">
-                            <img src="img/carrinho-branco.png" alt="Ícone de adicionar" style="width: 16px; height: 16px; margin-right: 5px;">Adicionar
+                        <button type="button" class="btn btn-dark" data-dismiss="modal" style="background-color: black; font-size: 30px;">
+                            <img src="img/carrinho-branco.png" alt="Ícone de adicionar" style="width: 35px; height: 35px; margin-right: 5px;">Adicionar
                         </button>
                     </div>               
                 </div>
