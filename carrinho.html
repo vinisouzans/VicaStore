@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt">
+<head>
+    <title>Carrinho - ViCa Store</title>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar { 
+            position: relative;
+            width: 100%;
+            height: 200px; /* Altura da barra */
+            /*background-color: #333;  Cor de fundo da barra */
+            overflow: hidden;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta a imagem de fundo para cobrir todo o espaço disponível */
+            z-index: -1; /* Coloca a imagem de fundo atrás da imagem redonda */
+        }
+
+        .profile-image {
+            position: absolute;
+            top: 50%; /* Centraliza verticalmente */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%); /* Move a imagem redonda para o centro */
+            width: 100px; /* Largura da imagem redonda */
+            height: 100px; /* Altura da imagem redonda */
+            border-radius: 50%; /* Torna a imagem redonda */
+            border: 3px solid white; /* Borda branca */
+        }
+        /* Estilos para a barra de navegação */
+        .navbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #EFBF04;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            color: #fff;
+            height: 70px;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative; /* Adicionado para alinhar a linha */
+            padding-left: 1em;
+            padding-right: 5em;
+        }
+
+        .navbar a:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10%;
+            bottom: 10%;
+            width: 1px;
+            background-color: #fff;
+        }
+
+        .navbar a:hover {
+            color: #ccc;
+        }
+
+        /* Estilos para os ícones */
+        .navbar i {
+            font-size: 24px;
+        }
+
+        /* Estilos para o texto abaixo dos ícones */
+        .navbar span {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        /* Estilo texto Nome da Loja */
+        .titulo-loja {
+            color: #FFCC04;
+            text-align: center;
+        }
+        .tempo-entrega {
+            color: black;
+            text-align: center;     
+            margin-bottom: 1em;       
+        }
+        .titulo-categoria {
+            color: black;
+            text-align: center; 
+        }
+        .componente-produto {
+            background-color: #FFCC04;
+            margin: 0.5em;
+            max-height: 20em;
+            border-radius: 5px;
+            padding: 1em;
+        }
+        .componente-produto img {
+            max-height: 18em;
+            border-radius: 5px;
+            border-top: 10px;
+        }
+
+        /* Estilizando os botões de rádio */
+        input[type="radio"] {
+            -webkit-appearance: none; /* Remove a aparência padrão do navegador */
+            -moz-appearance: none;
+            appearance: none;
+            width: 15px; /* Define a largura */
+            height: 15px; /* Define a altura */
+            border-radius: 0; /* Remove o arredondamento */
+            border: 2px solid black; /* Adiciona uma borda */
+            margin-right: 5px; /* Espaçamento entre os botões */
+            margin-top: 10px;
+        }
+
+        /* Estilizando os botões de rádio quando estão marcados */
+        input[type="radio"]:checked {            
+            background-color: gray; /* Cor de fundo quando marcado */
+            border-color: black; /* Cor da borda quando marcado */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="content">
+
+        <h2 class="titulo-categoria">Carrinho de Compras</h2>
+
+        <div class="content" style="margin-bottom: 70px;">     
+              
+            <div class="container" ID="produto_1">                                
+                    <div class="row span_12 componente-produto">
+                        
+                        <div class="col span_1" style="max-width: 18em;">
+                            <img src="img/produtos/legging-zea.webp" alt="Imagem do Produto" class="img-fluid">
+                        </div> 
+                                                    
+                        <div class="col span_10" style="padding-right: 0px;">
+                            <div class="col span_12" style="padding-right: 0; padding-left: 0;">
+                                <b style="color: white;">Calça legging estampa localizada digital ZEA. G</b>
+                            </div>
+                            <div class="col span_12" style="padding-right: 0; padding-left: 0;">
+                                <p style="text-decoration: none; font-size: 12px;">Calça legging de média compressão.
+                                    Para quem está procurando conforto, qualidade e estilo esta é a peça ideal.
+                                    Conta com uma estampa exclusiva e moderna, sublimada em um tecido de alta qualidade, possui cós anatômico, que proporciona maior conforto e segurança em seu treino ou dia a dia.</p>
+                            </div> 
+                            <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
+                                <b class="fs-6" style="color: white;"> R$ 59,90</b>
+                            </div>                             
+                        </div>  
+                        
+                        <div class="col span_1" style="max-width: 3.5em;">
+                            <img src="img/excluir.png" alt="Excluir produto" class="img-fluid" style="margin-top: 2.5em;">
+                        </div>                        
+                    </div>                    
+            </div>
+            
+            <div class="container" ID="produto_2">                                
+                <div class="row span_12 componente-produto">
+                    
+                    <div class="col span_1" style="max-width: 18em;">
+                        <img src="img/produtos/top-conforto-zea.webp" alt="Imagem do Produto" class="img-fluid">
+                    </div> 
+                                                
+                    <div class="col span_10" style="padding-right: 0px;">
+                        <div class="col span_12" style="padding-right: 0; padding-left: 0;">
+                            <b style="color: white;">Top conforto com alça fina e cós na cintura ZEA. G</b>
+                        </div>
+                        <div class="col span_12" style="padding-right: 0; padding-left: 0;">
+                            <p style="text-decoration: none; font-size: 12px;">Top de média compressão.
+                                Para quem está procurando conforto e sustentação, essa peça foi feita para você.
+                                O top conforto estampado é uma peça que possui alta tecnologia, não possui bojo, com uma estampa moderna e seu forro duplo elimina possíveis transparências, proporcionando total conforto e segurança durante a prática esportiva.</p>
+                        </div> 
+                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
+                            <b class="fs-6" style="color: white;"> R$ 49,90</b>
+                        </div>                             
+                    </div>  
+                    
+                    <div class="col span_1" style="max-width: 3.5em;">
+                        <img src="img/excluir.png" alt="Excluir produto" class="img-fluid" style="margin-top: 2.5em;">
+                    </div>                        
+                </div>                    
+            </div>
+
+        </div>
+        
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom" style="background-color: #EFBF04;">
+        <div class="container" style="background-color: #EFBF04; height: 70px;">
+            <div class="row span_12 d-flex justify-content-center" style="margin-inline-start: 7em;">
+                <div class="col span_4" style="max-width: 7em;">
+                    <!-- Ícone 1 -->
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/menu.png" alt="Produtos" height="30" class="d-inline-block align-top">
+                        Produtos
+                    </a>
+                </div>
+                <div class="col span_4" style="max-width: 7em;">
+                    <!-- Ícone 2  -->
+                    <a class="navbar-brand" href="#">
+                        <img src="img/shopping-cart.png" alt="Carrinho" height="30" class="d-inline-block align-top">
+                        Carrinho
+                    </a>
+                </div>
+                <div class="col span_4" style="max-width: 7em;">
+                    <!-- Ícone 3 -->
+                    <a class="navbar-brand" href="#">
+                        <img src="img/user.png" alt="Histórico" height="30" class="d-inline-block align-top">
+                        Histórico
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>        
+
+    <!-- Modal Produto-->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content bg-warning"> <!-- Adicione a classe bg-warning aqui -->
+                          
+                <!-- Modal Body -->
+                <div class="modal-body container span_12">
+                    <button ID="btnFecharModal" type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+                    <h4 style="color: white; margin-left: 0.5em;">Heineken</h4>
+                    <div class="row justify-content-center" style="margin: 0.5em; border-radius: 5px; max-height: 15em;">
+                        <img src="img/cerveja.JPG" alt="Imagem do Produto" class="img-fluid" style="width: 100%; height: 100%; max-height: 15em;">
+                    </div>
+                    <div style="margin: 1em;">
+                        <p>Cerveja heineken, 600ml, gelada, com álcool, embalagem de vidro.</p>
+                    </div>
+                
+                    <div style="margin: 1em;">
+                        <b style="color: white;">R$ 6,99</b>
+                    </div>
+                
+                    <div style="margin: 1em;">
+                        <b>Observação</b>
+                    </div>
+                
+                    <div class="row" style="margin: 1em;">
+                        <div class="col">
+                            <textarea class="form-control"></textarea>
+                        </div>
+                    </div>                
+                </div>
+                
+                
+                <!-- Modal Footer -->
+                <div class="modal-footer d-flex justify-content-between">
+                    <div ID="divQuantidadeProduto">
+                        <a class="navbar-brand" href="#" style="margin-right: 0;">
+                            <img src="img/botao-de-menos.png" alt="Diminuir quantidade">                        
+                        </a>                    
+                        <b style="margin: 1em;">1</b>
+                        <a class="navbar-brand" href="#">
+                            <img src="img/botao-mais.png" alt="Aumentar quantidade">                        
+                        </a>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-dark" data-dismiss="modal" style="background-color: black;">
+                            <img src="img/carrinho-branco.png" alt="Ícone de adicionar" style="width: 16px; height: 16px; margin-right: 5px;">Adicionar
+                        </button>
+                    </div>               
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Endereço -->
+    <div class="modal" id="modalEndereco">
+        <div class="modal-dialog">
+            <div class="modal-content bg-warning"> <!-- Adicione a classe bg-warning aqui -->
+                          
+                <!-- Modal Body -->
+                <div class="modal-body container span_12">
+                    <button ID="btnFecharModal" type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+                    <h4 style="color: white; margin-left: 0.5em;">Qual o local de entrega?</h4>
+                    
+                    <div style="margin: 1em;">
+                        <b>Qual seu nome?</b>
+                    </div>
+                    <div style="margin: 1em;">
+                        <input type="text" style="width: 100%; border-color: #FFCC04; border-radius: 5px;">
+                    </div> 
+
+                    <div style="margin: 1em;">
+                        <b>Qual seu sobrenome?</b>
+                    </div>
+                    <div style="margin: 1em;">
+                        <input type="text" style="width: 100%; border-color: #FFCC04; border-radius: 5px;">
+                    </div> 
+
+                    <div style="margin: 1em;">
+                        <b>Qual sua data de Nascimento?</b>
+                    </div>
+                    <div style="margin: 1em;">
+                        <input type="date" style="width: 100%; border-color: #FFCC04; border-radius: 5px;">
+                    </div> 
+
+                    <div style="margin: 1em;">
+                        <b>Qual seu Whatsapp?</b>
+                    </div>
+                    <div style="margin: 1em;">
+                        <input type="text" id="telefoneInput" style="width: 100%; border-color: #FFCC04; border-radius: 5px;">
+                    </div>
+
+                    <div class="row justify-content-center" style="margin: 1em;">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal" style="background-color: black;">
+                            Usar Minha Localização
+                        </button>
+                    </div>  
+                    
+                    <div class="row justify-content-center" style="margin: 1em;">                        
+                        <h4>OU</h4>
+                    </div> 
+                
+                    <div style="margin: 1em;">
+                        <b>Rua / Avenida</b>
+                    </div>
+                    <div style="margin: 1em;">
+                        <input type="text" style="width: 100%; border-color: #FFCC04; border-radius: 5px;">
+                    </div> 
+              
+                </div>
+                                
+                <!-- Modal Footer -->
+                <div class="modal-footer d-flex justify-content-between">
+                    <div ></div>
+                    <div class="row justify-content-end"> <!-- Use justify-content-end para alinhar à direita -->
+                        <button type="button" class="btn btn-dark" data-dismiss="modal" style="background-color: black;">
+                            Confirmar
+                        </button>
+                    </div>               
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Forma de Pagamento -->
+    <div class="modal" id="modalFormaPagamento">
+        <div class="modal-dialog">
+            <div class="modal-content bg-warning"> <!-- Adicione a classe bg-warning aqui -->
+                          
+                <!-- Modal Body -->
+                <div class="modal-body container span_12">
+                    <button ID="btnFecharModal" type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+                    <h4 style="color: white; margin-left: 0.5em;">Qual a forma de pagamento?</h4>
+                
+                    <div style="margin: 1em;">
+                        <form>
+                            <br>
+                            <input type="radio" id="opcao1" name="opcao" value="opcao1">
+                            <label for="pix"><b>Pix</b></label><br>
+                            <hr style="border-color: #ccc;">
+                
+                            <input type="radio" id="opcao2" name="opcao" value="opcao2">
+                            <label for="dinheiro"><b>Dinheiro</b></label><br>
+                            <hr style="border-color: #ccc;">
+                
+                            <input type="radio" id="opcao3" name="opcao" value="opcao3">
+                            <label for="debito" style="margin-bottom: 0;"><b>Débito</b></label><br>
+                            <p style="font-size:12px; margin-top: 0px; margin-left: 2em;">Levamos a máquininha de cartão.</p>
+                            <hr style="border-color: #ccc;">
+                
+                            <input type="radio" id="opcao4" name="opcao" value="opcao4">
+                            <label for="credito" style="margin-bottom: 0;"><b>Crédito</b></label><br>
+                            <p style="font-size:12px; margin-top: 0px; margin-left: 2em;">Levamos a máquininha de cartão.</p>
+                        </form>
+                    </div>
+                </div>
+                
+                
+                                
+                <!-- Modal Footer -->
+                <div class="modal-footer d-flex justify-content-between">
+                    <div ></div>
+                    <div class="row justify-content-end"> <!-- Use justify-content-end para alinhar à direita -->
+                        <button type="button" class="btn btn-dark" data-dismiss="modal" style="background-color: black;">
+                            Confirmar
+                        </button>
+                    </div>               
+                </div>                
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+    <!-- Biblioteca de ícones (Font Awesome) 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnFecharModal").click(function(){
+                $("#myModal").hide()
+            });
+        });
+
+        // Função para formatar o número do telefone
+        function formatarTelefone(telefone) {
+            telefone = telefone.replace(/\D/g, ''); // Remove caracteres não numéricos
+            telefone = telefone.replace(/^(\d{2})(\d)/g, '($1) $2'); // Coloca parênteses em volta dos dois primeiros dígitos
+            telefone = telefone.replace(/(\d)(\d{4})$/, '$1-$2'); // Coloca hífen entre o quinto e o sexto dígitos
+            return telefone;
+        }
+
+        // Seleciona o elemento de input
+        var inputTelefone = document.getElementById('telefoneInput');
+
+        // Adiciona um ouvinte de evento de entrada para formatar o número conforme o usuário digita
+        inputTelefone.addEventListener('input', function() {
+            inputTelefone.value = formatarTelefone(inputTelefone.value);
+        });
+    </script>
+    
+</body>
+</html>
