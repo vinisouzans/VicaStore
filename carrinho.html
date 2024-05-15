@@ -106,14 +106,16 @@
         .componente-produto {
             background-color: #FFCC04;
             margin: 0.5em;
-            max-height: 20em;
+            height: 31em;
             border-radius: 5px;
             padding: 1em;
+            width: 100%;
+            margin-right: 0;
         }
         .componente-produto img {
-            max-height: 18em;
+            max-height: 30em;
             border-radius: 5px;
-            border-top: 10px;
+            border-top: 20px;
         }
 
         /* Estilizando os botões de rádio */
@@ -121,12 +123,12 @@
             -webkit-appearance: none; /* Remove a aparência padrão do navegador */
             -moz-appearance: none;
             appearance: none;
-            width: 15px; /* Define a largura */
-            height: 15px; /* Define a altura */
+            width: 35px; /* Define a largura */
+            height: 35px; /* Define a altura */
             border-radius: 0; /* Remove o arredondamento */
             border: 2px solid black; /* Adiciona uma borda */
             margin-right: 5px; /* Espaçamento entre os botões */
-            margin-top: 10px;
+            margin-top: 10px;            
         }
 
         /* Estilizando os botões de rádio quando estão marcados */
@@ -142,87 +144,122 @@
 
         <h2 class="titulo-categoria">Carrinho de Compras</h2>
 
-        <div class="content" style="margin-bottom: 70px;">     
-              
-            <div class="container" ID="produto_1">                                
+        <div class="content" style="margin-bottom: 70px;">   
+            
+            <div ID="lista-prod-carrinho">
+
+                <!--
+                <div class="container" ID="produto_1" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;">                                
                     <div class="row span_12 componente-produto">
                         
-                        <div class="col span_1" style="max-width: 18em;">
-                            <img src="img/produtos/legging-zea.webp" alt="Imagem do Produto" class="img-fluid">
+                        <div class="col span_1" style="max-width: 21em;">
+                            <img ID="foto-prod-sel" src="" alt="Imagem do Produto" class="img-fluid">
                         </div> 
                                                     
                         <div class="col span_10" style="padding-right: 0px;">
                             <div class="col span_12" style="padding-right: 0; padding-left: 0;">
-                                <b style="color: white;">Calça legging estampa localizada digital ZEA. G</b>
+                                <b ID="nome-prod-sel" style="color: white; font-size: 30px;"></b>
+                            </div>
+                            <div class="col span_12" style="padding-right: 0; padding-left: 0; margin-top: 15px;">
+                                <b style="font-size: 27px; display: inline-block;">Quantidade: </b>
+                                <p ID="qtd-prod-sel" style="text-decoration: none; font-size: 27px; display: inline-block;"></p>                                                              
+                            </div>       
+                                 <div class="col span_12" style="padding-right: 0; padding-left: 0;">
+                                <b style="font-size: 27px; display: inline-block;">Tamanho: </b>
+                                <p ID="tamanho-prod-sel" style="text-decoration: none; font-size: 27px; display: inline-block;"></p>                                                              
                             </div>
                             <div class="col span_12" style="padding-right: 0; padding-left: 0;">
-                                <p style="text-decoration: none; font-size: 12px;">Calça legging de média compressão.
-                                    Para quem está procurando conforto, qualidade e estilo esta é a peça ideal.
-                                    Conta com uma estampa exclusiva e moderna, sublimada em um tecido de alta qualidade, possui cós anatômico, que proporciona maior conforto e segurança em seu treino ou dia a dia.</p>
-                            </div> 
-                            <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
-                                <b class="fs-6" style="color: white;"> R$ 59,90</b>
+                                <b style="font-size: 27px; display: inline-block;">Observação: </b>
+                                <p ID="obs-prod-sel" style="text-decoration: none; font-size: 25px; display: inline-block; text-align: justify;"></p>                                                              
+                            </div>                  
+                            <div class="col-md-auto ms-auto" style="background-color: black; max-width: 15em; border-radius: 5px;">
+                                <b class="fs-6" style="color: white; font-size: 25px;">Preço: </b>
+                                <p ID="preco-prod-sel" style="color: white; text-decoration: none; font-size: 27px; display: inline-block;"></p> 
                             </div>                             
                         </div>  
                         
-                        <div class="col span_1" style="max-width: 3.5em;">
-                            <img src="img/excluir.png" alt="Excluir produto" class="img-fluid" style="margin-top: 2.5em;">
+                        <div class="col span_1" style="max-width: 8em;">
+                            <img src="img/excluir.png" alt="Excluir produto" class="img-fluid" style="margin-top: 160%; height: 60px; width: 60px;">
                         </div>                        
                     </div>                    
+                </div> 
+                -->
+                
+            </div>
+              
+            <div style="background-color: #FFCC04; margin-left: 1.5em; margin-right: 0.5em; border-radius: 5px; padding-left: 2em;">
+                <b style="color: white; font-size: 30px;">Endereço</b>
+                <br>
+                <p style="text-decoration: none; font-size: 30px; margin-top: 20px; display: inline-block;">Selecione >></p>  
+                <img src="img/botao-home.png" alt="cadastrar endereço" class="img-fluid" style="height: 60px; width: 60px;" onclick="abrirModalEndereco()">     
+                <div>
+                    <b ID="nome-rua" style="font-size: 27px;"></b>
+                    <b ID="numero" style="font-size: 27px;"></b>
+                    <b ID="cep" style="font-size: 27px;"></b>
+                </div>            
+            </div>
+
+            <div style="background-color: #FFCC04; margin-top: 0.5em; margin-left: 1.5em; margin-right: 0.5em; border-radius: 5px; padding-left: 2em;">
+                <b style="color: white; font-size: 30px;">Forma de pagamento</b>
+                <br>
+                <p style="text-decoration: none; font-size: 30px; margin-top: 20px; display: inline-block;">Selecione >></p>  
+                <img src="img/forma-de-pagamento.png" alt="Selecionar forma de pagamento" class="img-fluid" style="height: 60px; width: 60px;" onclick="abrirModalPagamento()"> 
+                <div>
+                    <b ID="pagamento" style="font-size: 27px;"></b>
+                </div>
             </div>
             
-            <div class="container" ID="produto_2">                                
-                <div class="row span_12 componente-produto">
-                    
-                    <div class="col span_1" style="max-width: 18em;">
-                        <img src="img/produtos/top-conforto-zea.webp" alt="Imagem do Produto" class="img-fluid">
-                    </div> 
-                                                
-                    <div class="col span_10" style="padding-right: 0px;">
-                        <div class="col span_12" style="padding-right: 0; padding-left: 0;">
-                            <b style="color: white;">Top conforto com alça fina e cós na cintura ZEA. G</b>
-                        </div>
-                        <div class="col span_12" style="padding-right: 0; padding-left: 0;">
-                            <p style="text-decoration: none; font-size: 12px;">Top de média compressão.
-                                Para quem está procurando conforto e sustentação, essa peça foi feita para você.
-                                O top conforto estampado é uma peça que possui alta tecnologia, não possui bojo, com uma estampa moderna e seu forro duplo elimina possíveis transparências, proporcionando total conforto e segurança durante a prática esportiva.</p>
-                        </div> 
-                        <div class="col-md-auto ms-auto" style="background-color: black; max-width: 6em; border-radius: 5px;">
-                            <b class="fs-6" style="color: white;"> R$ 49,90</b>
-                        </div>                             
-                    </div>  
-                    
-                    <div class="col span_1" style="max-width: 3.5em;">
-                        <img src="img/excluir.png" alt="Excluir produto" class="img-fluid" style="margin-top: 2.5em;">
-                    </div>                        
-                </div>                    
+            
+            <div>
+                <div class="col span_12" style="padding-right: 0; padding-left: 0; margin-top: 15px; margin-left: 1.5em;">
+                    <p style="text-decoration: none; font-size: 27px; display: inline-block;">Valor Total:</p>  
+                    <b ID="valor-total" style="font-size: 27px; display: inline-block;"></b>  
+                    <br>
+                    <p style="text-decoration: none; font-size: 27px; display: inline-block;">Quantidade de peças:</p>  
+                    <b ID="qtd-total-pecas" style="font-size: 27px; display: inline-block;"></b>                                                                               
+                </div>  
+                
             </div>
+
+            <div style="margin-top: 0.5em; margin-right: 0.5em; border-radius: 5px; padding-left: 2em; margin-bottom: 150px;">
+                <button ID="btn-adicionar" type="button" class="btn" data-dismiss="modal" onclick="montarTextoEnviar()" style="background-color: rgb(32, 172, 19); font-size: 40px; color: white; width: 100%; display: flex; justify-content: center; align-items: center; border-radius: 10px;">                    
+                    <span style="flex-grow: 1; text-align: center;">
+                        <img src="img/whatsapp.png" alt="Ícone de adicionar" style="height: 50px; font-size: 40px; justify-content: right; align-items: right;">
+                        Enviar Pedido
+                        <a id="link-whatsapp" href="#">Enviar mensagem</a>
+
+                        <!--<a href="https://api.whatsapp.com/send?phone=5518997732200&text=Teste%20de%20mensagem">Enviar mensagem</a>-->
+
+                    </span>
+                </button>
+            </div>
+            
 
         </div>
         
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom" style="background-color: #EFBF04;">
-        <div class="container" style="background-color: #EFBF04; height: 70px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom" style="background-color: #EFBF04; height: 150px;">
+        <div class="container" style="background-color: #EFBF04; height: 150px; max-width: 100%;">
             <div class="row span_12 d-flex justify-content-center" style="margin-inline-start: 7em;">
-                <div class="col span_4" style="max-width: 7em;">
+                <div class="col span_4" style="max-width: 33%;">
                     <!-- Ícone 1 -->
-                    <a class="navbar-brand" href="index.html">
-                        <img src="img/menu.png" alt="Produtos" height="30" class="d-inline-block align-top">
+                    <a class="navbar-brand" href="index.html" style="font-size: 35px;">
+                        <img src="img/menu.png" alt="Produtos" height="60" class="d-inline-block align-top">
                         Produtos
                     </a>
                 </div>
-                <div class="col span_4" style="max-width: 7em;">
+                <div class="col span_4" style="max-width: 33%;">
                     <!-- Ícone 2  -->
-                    <a class="navbar-brand" href="#">
-                        <img src="img/shopping-cart.png" alt="Carrinho" height="30" class="d-inline-block align-top">
+                    <a class="navbar-brand" href="#" style="font-size: 35px;">
+                        <img src="img/shopping-cart.png" alt="Carrinho" height="60" class="d-inline-block align-top">
                         Carrinho
                     </a>
                 </div>
-                <div class="col span_4" style="max-width: 7em;">
+                <div class="col span_4" style="max-width: 33%;">
                     <!-- Ícone 3 -->
-                    <a class="navbar-brand" href="#">
-                        <img src="img/user.png" alt="Histórico" height="30" class="d-inline-block align-top">
+                    <a class="navbar-brand" href="#" style="font-size: 35px;">
+                        <img src="img/user.png" alt="Histórico" height="60" class="d-inline-block align-top">
                         Histórico
                     </a>
                 </div>
@@ -240,7 +277,7 @@
                     <button ID="btnFecharModal" type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
                     <h4 style="color: white; margin-left: 0.5em;">Heineken</h4>
                     <div class="row justify-content-center" style="margin: 0.5em; border-radius: 5px; max-height: 15em;">
-                        <img src="img/cerveja.JPG" alt="Imagem do Produto" class="img-fluid" style="width: 100%; height: 100%; max-height: 15em;">
+                        <img src="img/produtos/legging-aracaju.webp" alt="Imagem do Produto" class="img-fluid" style="width: 100%; height: 100%; max-height: 15em;">
                     </div>
                     <div style="margin: 1em;">
                         <p>Cerveja heineken, 600ml, gelada, com álcool, embalagem de vidro.</p>
@@ -287,58 +324,59 @@
 
     <!-- Modal Endereço -->
     <div class="modal" id="modalEndereco">
-        <div class="modal-dialog">
+        <div class="modal-dialog" style="max-width: 95%; max-height: 70%;">
             <div class="modal-content bg-warning"> <!-- Adicione a classe bg-warning aqui -->
                           
                 <!-- Modal Body -->
                 <div class="modal-body container span_12">
-                    <button ID="btnFecharModal" type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
-                    <h4 style="color: white; margin-left: 0.5em;">Qual o local de entrega?</h4>
+                    <button ID="btnFecharModalEndereco" type="button" class="close" data-dismiss="modal" style="color: white; font-size: 40px;">&times;</button>
+                    <h4 style="color: white; margin-left: 0.5em; color: white; font-size: 50px;">Qual o local de entrega?</h4>
                     
                     <div style="margin: 1em;">
-                        <b>Qual seu nome?</b>
+                        <b style="font-size: 40px;">Qual seu nome?</b>
                     </div>
                     <div style="margin: 1em;">
-                        <input type="text" style="width: 100%; border-color: #FFCC04; border-radius: 5px;">
+                        <input ID="inpt-nome" type="text" style="width: 100%; border-color: #FFCC04; border-radius: 5px; font-size: 40px;">
+                        <p ID="msg-nome" style="font-size: 30px; color: red; visibility: hidden;">Preencha seu Nome</p>
                     </div> 
 
                     <div style="margin: 1em;">
-                        <b>Qual seu sobrenome?</b>
+                        <b style="font-size: 40px;">Qual seu sobrenome?</b>
                     </div>
                     <div style="margin: 1em;">
-                        <input type="text" style="width: 100%; border-color: #FFCC04; border-radius: 5px;">
-                    </div> 
+                        <input ID="inpt-sobrenome" type="text" style="width: 100%; border-color: #FFCC04; border-radius: 5px; font-size: 40px;">
+                    </div>       
 
                     <div style="margin: 1em;">
-                        <b>Qual sua data de Nascimento?</b>
+                        <b style="font-size: 40px;">Qual seu Whatsapp?</b>
                     </div>
                     <div style="margin: 1em;">
-                        <input type="date" style="width: 100%; border-color: #FFCC04; border-radius: 5px;">
-                    </div> 
-
-                    <div style="margin: 1em;">
-                        <b>Qual seu Whatsapp?</b>
-                    </div>
-                    <div style="margin: 1em;">
-                        <input type="text" id="telefoneInput" style="width: 100%; border-color: #FFCC04; border-radius: 5px;">
-                    </div>
-
-                    <div class="row justify-content-center" style="margin: 1em;">
-                        <button type="button" class="btn btn-dark" data-dismiss="modal" style="background-color: black;">
-                            Usar Minha Localização
-                        </button>
-                    </div>  
-                    
-                    <div class="row justify-content-center" style="margin: 1em;">                        
-                        <h4>OU</h4>
-                    </div> 
+                        <input type="text" id="telefoneInput" placeholder="(99) 99999-9999" style="width: 100%; border-color: #FFCC04; border-radius: 5px; font-size: 40px;">
+                        <p ID="msg-whats" style="font-size: 30px; color: red; visibility: hidden;">Preencha seu Whatsapp</p>
+                    </div>                     
                 
                     <div style="margin: 1em;">
-                        <b>Rua / Avenida</b>
+                        <b style="font-size: 40px;">Rua / Avenida</b>
                     </div>
                     <div style="margin: 1em;">
-                        <input type="text" style="width: 100%; border-color: #FFCC04; border-radius: 5px;">
+                        <input ID="inpt-rua" type="text" style="width: 100%; border-color: #FFCC04; border-radius: 5px; font-size: 40px;">
+                        <p ID="msg-rua" style="font-size: 30px; color: red; visibility: hidden;">Preencha sua Rua</p>
                     </div> 
+
+                    <div style="margin: 1em;">
+                        <b style="font-size: 40px;">Número</b>
+                    </div>
+                    <div style="margin: 1em;">
+                        <input ID="inpt-numero" type="number" style="width: 100%; border-color: #FFCC04; border-radius: 5px; font-size: 40px;">
+                        <p ID="msg-numero" style="font-size: 30px; color: red; visibility: hidden;">Preencha o número</p>
+                    </div> 
+
+                    <div style="margin: 1em;">
+                        <b style="font-size: 40px;">CEP</b>
+                    </div>
+                    <div style="margin: 1em;">
+                        <input id="numero-cep" type="text" style="width: 100%; border-color: #FFCC04; border-radius: 5px; font-size: 40px;">
+                    </div>                     
               
                 </div>
                                 
@@ -346,7 +384,7 @@
                 <div class="modal-footer d-flex justify-content-between">
                     <div ></div>
                     <div class="row justify-content-end"> <!-- Use justify-content-end para alinhar à direita -->
-                        <button type="button" class="btn btn-dark" data-dismiss="modal" style="background-color: black;">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal" onclick="adicionarEndereco()" style="background-color: black; font-size: 40px;">
                             Confirmar
                         </button>
                     </div>               
@@ -357,33 +395,33 @@
 
     <!-- Modal Forma de Pagamento -->
     <div class="modal" id="modalFormaPagamento">
-        <div class="modal-dialog">
+        <div class="modal-dialog" style="max-width: 90%; max-height: 70%;">
             <div class="modal-content bg-warning"> <!-- Adicione a classe bg-warning aqui -->
                           
                 <!-- Modal Body -->
                 <div class="modal-body container span_12">
-                    <button ID="btnFecharModal" type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
-                    <h4 style="color: white; margin-left: 0.5em;">Qual a forma de pagamento?</h4>
+                    <button ID="btnFecharModalPagamento" type="button" class="close" data-dismiss="modal" style="color: white; font-size: 50px;">&times;</button>
+                    <h4 style="color: white; color: white; font-size: 45px;">Qual a forma de pagamento?</h4>
                 
                     <div style="margin: 1em;">
                         <form>
                             <br>
-                            <input type="radio" id="opcao1" name="opcao" value="opcao1">
-                            <label for="pix"><b>Pix</b></label><br>
+                            <input type="radio" id="opcao1" name="opcao" value="Pix">
+                            <label for="pix"><b style="font-size: 40px;">Pix</b></label><br>
                             <hr style="border-color: #ccc;">
                 
-                            <input type="radio" id="opcao2" name="opcao" value="opcao2">
-                            <label for="dinheiro"><b>Dinheiro</b></label><br>
+                            <input type="radio" id="opcao2" name="opcao" value="Dinheiro">
+                            <label for="dinheiro"><b style="font-size: 40px;">Dinheiro</b></label><br>
                             <hr style="border-color: #ccc;">
                 
-                            <input type="radio" id="opcao3" name="opcao" value="opcao3">
-                            <label for="debito" style="margin-bottom: 0;"><b>Débito</b></label><br>
-                            <p style="font-size:12px; margin-top: 0px; margin-left: 2em;">Levamos a máquininha de cartão.</p>
+                            <input type="radio" id="opcao3" name="opcao" value="Débito">
+                            <label for="debito" style="margin-bottom: 0;"><b style="font-size: 40px;">Débito</b></label><br>
+                            <p style="font-size:30px; margin-top: 0px; margin-left: 2em;">Levamos a máquininha de cartão.</p>
                             <hr style="border-color: #ccc;">
                 
-                            <input type="radio" id="opcao4" name="opcao" value="opcao4">
-                            <label for="credito" style="margin-bottom: 0;"><b>Crédito</b></label><br>
-                            <p style="font-size:12px; margin-top: 0px; margin-left: 2em;">Levamos a máquininha de cartão.</p>
+                            <input type="radio" id="opcao4" name="opcao" value="Crédito">
+                            <label for="credito" style="margin-bottom: 0;"><b style="font-size: 40px;">Crédito</b></label><br>
+                            <p style="font-size:30px; margin-top: 0px; margin-left: 2em;">Levamos a máquininha de cartão.</p>
                         </form>
                     </div>
                 </div>
@@ -394,7 +432,7 @@
                 <div class="modal-footer d-flex justify-content-between">
                     <div ></div>
                     <div class="row justify-content-end"> <!-- Use justify-content-end para alinhar à direita -->
-                        <button type="button" class="btn btn-dark" data-dismiss="modal" style="background-color: black;">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal" style="background-color: black; font-size: 40px;" onclick="obterOpcaoSelecionada()">
                             Confirmar
                         </button>
                     </div>               
@@ -426,6 +464,285 @@
             });
         });
 
+        $(document).ready(function(){
+            $("#btnFecharModalEndereco").click(function(){
+                $("#modalEndereco").hide()
+            });
+        });
+
+        $(document).ready(function(){
+            $("#btnFecharModalPagamento").click(function(){
+                $("#modalFormaPagamento").hide()
+            });
+        });
+
+        //preencherProdutoSelecionado()
+
+        function preencherProdutoSelecionado(){
+
+            var nomeProd = document.getElementById('nome-prod-sel');
+            nomeProd.innerText = localStorage.getItem('nomeProdutoEscolhido')
+            
+            var qtdProd  = document.getElementById('qtd-prod-sel');  
+            qtdProd.innerText = localStorage.getItem('qtdProdutoEscolhido');
+
+            var tamanhoProd = document.getElementById('tamanho-prod-sel');
+            tamanhoProd.innerText = localStorage.getItem('tamanhoProdutoEscolhido');
+
+            var obsProd = document.getElementById('obs-prod-sel');
+            obsProd.innerText = localStorage.getItem('obsProdutoEscolhido');
+
+            var foto = document.getElementById('foto-prod-sel');
+            foto.src = localStorage.getItem('srcFotoProdutoEscolhido')
+
+            var preco = document.getElementById('preco-prod-sel'); //preco-prod-sel
+            preco.innerText = localStorage.getItem('precoProdutoEscolhido')
+
+            console.log(localStorage.getItem('produtos'))
+        }
+
+        percorrerArrayProdutosSel()
+
+        function percorrerArrayProdutosSel() {
+            // Recupera o array de produtos do localStorage
+            var produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+
+            var texto = ""
+            var qtdTotalPecas = 0
+            var valorTotal = 0.00
+
+            // Percorre o array de produtos
+            for (var i = 0; i < produtos.length; i++) {
+                // Acessa o nome do produto e imprime no console observacoes
+
+                var idProd = produtos[i].id
+                var nomeProd = produtos[i].nome
+                var qtdProd =  produtos[i].quantidade
+                var tamanhoProd = produtos[i].tamanho
+                var precoProd = produtos[i].preco
+                var obsProd = produtos[i].observacoes
+                var srcFoto = produtos[i].srcFoto
+
+                plotarNaTela(idProd, nomeProd, qtdProd, tamanhoProd, obsProd, precoProd, srcFoto)
+
+                texto = texto + "---------------\n"
+                texto = texto + "*Produto:* " + nomeProd + "\n"
+                texto = texto + "*Tamanho:* " + tamanhoProd + "\n"
+                texto = texto + "*Quantidade:* " + qtdProd + "\n"
+                texto = texto + "*Observação:* " + obsProd + "\n"
+                texto = texto + "*Preço:* " + precoProd + "\n"
+
+                qtdTotalPecas = qtdTotalPecas +  parseInt(qtdProd)
+
+                precoProd =  precoProd.replace("R$", "")
+                precoProd =  precoProd.replace(",", ".")
+                var precoNumber = parseFloat(precoProd)
+                valorTotal = valorTotal + precoNumber
+            }
+
+            console.log(texto)
+
+            localStorage.setItem('textoProdutosCarrinho', texto);
+            localStorage.setItem('qtdTotalPecas', qtdTotalPecas);
+            localStorage.setItem('valorTotal', valorTotal);
+
+
+            adicionarValorTotalTela()
+            adicionarTotalPecasTela()
+
+            montarTextoEnviar()
+        }
+
+        function adicionarValorTotalTela(){
+            var valorTotal = document.getElementById('valor-total');
+            var valorTotalFormatado = localStorage.getItem('valorTotal').replace(".", ",")
+            valorTotal.innerText = "R$ " + valorTotalFormatado
+        }
+
+        function adicionarTotalPecasTela(){
+            var qtdTotalPecas = document.getElementById('qtd-total-pecas');
+            qtdTotalPecas.innerText = localStorage.getItem('qtdTotalPecas');
+        }
+
+
+        function plotarNaTela(idProduto, nomeProd, quantidade, tamanho, obs, preco, foto){
+            // Quantidade de elementos a serem adicionados
+            var quantidadeElementos = 5;
+
+            // Seleciona o elemento pai onde os novos elementos serão adicionados
+            var listaProdCarrinho = document.getElementById("lista-prod-carrinho");
+
+            // Loop para adicionar os novos elementos
+            
+            // Cria um novo elemento div
+            var novoElementoDiv = document.createElement("div"); //esse envolve todos
+            
+            // Define o ID para o novo elemento div
+            novoElementoDiv.id = idProduto
+            novoElementoDiv.className = "container";
+            novoElementoDiv.style.marginLeft = "0";
+            novoElementoDiv.style.marginRight = "0";
+            novoElementoDiv.style.maxWidth = "100%";
+            novoElementoDiv.style.paddingRight = "15px";
+
+            var div2 = document.createElement("div"); //abaixo da q envolve todos
+            div2.className = "row span_12 componente-produto"
+            div2.style.margin = "1em"
+
+            var div3 = document.createElement("div")
+            div3.className = "col span_1"
+            div3.style.maxWidth = "21em"
+
+            var img = document.createElement("img");
+            img.id = "foto-prod-sel"
+            img.src = foto
+            img.style.maxWidth = "21em"
+
+            div3.appendChild(img)
+
+            div2.appendChild(div3)
+
+            var div4 = document.createElement("div");
+            div4.className = "col span_10"
+            div4.style.paddingRight = "0"
+
+            var div5 = document.createElement("div");
+            div5.className = "col span_12"
+            div5.style.paddingRight = "0"
+            div5.style.paddingLeft = "0"
+
+            var bNomeProduto = document.createElement("b");
+            bNomeProduto.id = "nome-prod-sel"
+            bNomeProduto.style.color = "white"
+            bNomeProduto.style.fontSize = "30px"
+            bNomeProduto.innerText = nomeProd
+
+            div5.appendChild(bNomeProduto)
+            div4.appendChild(div5)
+
+            var div6 = document.createElement("div");
+            div6.className = "col span_12"
+            div6.style.paddingRight = "0"
+            div6.style.paddingLeft = "0"
+            div6.style.marginTop = "15px"
+
+            var bQuantidade = document.createElement("b");
+            bQuantidade.style.fontSize = "27px"
+            bQuantidade.style.display = "inline-block"
+            bQuantidade.innerText = "Quantidade: "
+
+            var pQuantidade = document.createElement("p");
+            pQuantidade.id = "qtd-prod-sel"
+            pQuantidade.style.textDecoration = "none"
+            pQuantidade.style.fontSize = "27px"
+            pQuantidade.style.display = "inline-block"
+            pQuantidade.style.marginLeft = "5px"
+            pQuantidade.innerText = quantidade
+
+            div6.appendChild(bQuantidade)
+            div6.appendChild(pQuantidade)
+            div4.appendChild(div6)
+
+
+            var div7 = document.createElement("div");
+            div7.className = "col span_12"
+            div7.style.paddingRight = "0"
+            div7.style.paddingLeft = "0"
+
+            var bTamanho = document.createElement("b");
+            bTamanho.style.fontSize = "27px"
+            bTamanho.style.display = "inline-block"
+            bTamanho.innerText = "Tamanho: "
+
+            var pTamanho = document.createElement("p");
+            pTamanho.id = "tamanho-prod-sel"
+            pTamanho.style.textDecoration = "none"
+            pTamanho.style.fontSize = "27px"
+            pTamanho.style.display = "inline-block"
+            pTamanho.style.marginLeft = "5px"
+            pTamanho.innerText = tamanho
+
+            div7.appendChild(bTamanho)
+            div7.appendChild(pTamanho)
+            div4.appendChild(div7)
+
+            var div8 = document.createElement("div");
+            div8.className = "col span_12"
+            div8.style.paddingRight = "0"
+            div8.style.paddingLeft = "0"
+
+            var bObs = document.createElement("b");
+            bObs.style.fontSize = "27px"
+            bObs.style.display = "inline-block"
+            bObs.innerText = "Observação: "
+
+            var pObs = document.createElement("p");
+            pObs.id = "obs-prod-sel"
+            pObs.style.textDecoration = "none"
+            pObs.style.fontSize = "27px"
+            pObs.style.display = "inline-block"
+            pObs.style.marginLeft = "5px"
+            pObs.innerText = obs
+
+            div8.appendChild(bObs)
+            div8.appendChild(pObs)
+            div4.appendChild(div8)
+
+            var div9 = document.createElement("div");
+            div9.className = "col-md-auto ms-auto"
+            div9.style.backgroundColor = "black"
+            div9.style.maxWidth = "15em"
+            div9.style.borderRadius = "5px"
+
+            var bPreco = document.createElement("b");
+            bPreco.className = "fs-6"
+            bPreco.style.fontSize = "25px"
+            bPreco.style.color = "white"
+            bPreco.innerText = "Preço: "
+
+            var pPreco = document.createElement("p");
+            pPreco.id = "obs-prod-sel"
+            pPreco.style.textDecoration = "none"
+            pPreco.style.fontSize = "27px"
+            pPreco.style.display = "inline-block"
+            pPreco.style.marginLeft = "5px"
+            pPreco.style.color = "white"
+            pPreco.innerText = "R$ " + preco
+
+            div9.appendChild(bPreco)
+            div9.appendChild(pPreco)
+            div4.appendChild(div9)
+
+            div2.appendChild(div4)
+
+
+            var div10 = document.createElement("div");
+            div10.className = "col span_1"
+            div10.style.maxWidth = "8em"
+
+            var imgExcluir = document.createElement("img");
+            imgExcluir.src = "img/excluir.png"
+            imgExcluir.className = "img-fluid"
+            imgExcluir.style.marginTop = "160%"
+            imgExcluir.style.height = "60px"
+            imgExcluir.style.width = "60px"
+
+            div10.appendChild(imgExcluir)
+            div2.appendChild(div10)
+
+
+            novoElementoDiv.appendChild(div2)
+
+
+            // Conteúdo interno do novo elemento div (o conteúdo que você quer adicionar)
+
+            // Adiciona o novo elemento como filho do elemento pai
+            listaProdCarrinho.appendChild(novoElementoDiv);                
+            
+        }
+        
+
+
         // Função para formatar o número do telefone
         function formatarTelefone(telefone) {
             telefone = telefone.replace(/\D/g, ''); // Remove caracteres não numéricos
@@ -441,6 +758,198 @@
         inputTelefone.addEventListener('input', function() {
             inputTelefone.value = formatarTelefone(inputTelefone.value);
         });
+
+
+        function abrirModalEndereco() {
+            $("#modalEndereco").show()
+        }
+
+        function abrirModalPagamento(){
+            $("#modalFormaPagamento").show()
+        }
+
+
+        // Seleciona o input pelo ID
+        var inputNumero = document.getElementById('numero-cep');
+
+        // Adiciona um event listener para o evento 'input'
+        inputNumero.addEventListener('input', function(event) {
+            // Obtém o valor atual do input
+            var valor = event.target.value;
+
+            // Remove todos os caracteres não numéricos do valor
+            var numeros = valor.replace(/\D/g, '');
+
+            // Formata o valor com a máscara "99999-999"
+            var valorFormatado = '';
+            for (var i = 0; i < numeros.length; i++) {
+                valorFormatado += numeros[i];
+                if (i === 4) {
+                    valorFormatado += '-';
+                }
+            }
+
+            // Atualiza o valor do input com a máscara aplicada
+            event.target.value = valorFormatado;
+        });
+
+        // Seleciona o input pelo ID
+        var telefoneInput = document.getElementById('telefoneInput');
+
+        // Adiciona um event listener para o evento 'input'
+        telefoneInput.addEventListener('input', function(event) {
+            // Obtém o valor atual do input
+            var valor = event.target.value;
+
+            // Remove todos os caracteres não numéricos do valor
+            var numeros = valor.replace(/\D/g, '');
+
+            // Formata o valor com a máscara "(99) 99999-9999"
+            var valorFormatado = '(' + numeros.slice(0, 2) + ') ' + numeros.slice(2, 7) + '-' + numeros.slice(7, 11);
+
+            // Atualiza o valor do input com a máscara aplicada
+            event.target.value = valorFormatado;
+        });
+
+        function adicionarEndereco(){
+
+
+            var nomeInput = document.getElementById('inpt-nome');
+            var valorNome = nomeInput.value;
+
+            if (valorNome.length > 0) {
+                var msgNome = document.getElementById('msg-nome');
+                msgNome.style.visibility = 'hidden';
+                localStorage.setItem('nomeCliente', valorNome);  
+            } else {
+                var msgNome = document.getElementById('msg-nome');
+                msgNome.style.visibility = 'visible';
+            }
+
+            var sobrenomeInput =  document.getElementById('inpt-sobrenome');
+            var valorSobrenome = sobrenomeInput.value;
+            localStorage.setItem('sobrenomeCliente', valorSobrenome); 
+
+
+            var whatsInput = document.getElementById('telefoneInput');
+            var valorWhats = whatsInput.value;
+
+            if (valorWhats.length > 14){
+                var msgWhats = document.getElementById('msg-whats');
+                msgWhats.style.visibility = 'hidden';
+                localStorage.setItem('whatsCliente', valorWhats);
+            } else {
+                var msgWhats = document.getElementById('msg-whats');
+                msgWhats.style.visibility = 'visible';
+            }
+
+
+            var ruaInput = document.getElementById('inpt-rua');
+            var valorRua = ruaInput.value;
+            if (valorRua.length > 0){
+                var msgRua = document.getElementById('msg-rua');
+                msgRua.style.visibility = 'hidden';
+                localStorage.setItem('ruaCliente', valorRua);
+            } else {
+                var msgRua = document.getElementById('msg-rua');
+                msgRua.style.visibility = 'visible';
+            }
+
+            var numeroInput = document.getElementById('inpt-numero');
+            var valorNumero = numeroInput.value;
+
+            if (valorNumero.length > 0){
+                var msgNumero = document.getElementById('msg-numero');
+                msgNumero.style.visibility = 'hidden';
+                localStorage.setItem('numeroCliente', valorNumero);
+            } else {
+                var msgNumero = document.getElementById('msg-numero');
+                msgNumero.style.visibility = 'visible';
+            }
+
+            var cepInput = document.getElementById('numero-cep');
+            var valorCep = cepInput.value;
+            localStorage.setItem('cepCliente', valorCep);
+
+            console.log(localStorage.getItem('nomeCliente'))
+            console.log(localStorage.getItem('sobrenomeCliente'))
+            console.log(localStorage.getItem('whatsCliente'))
+            console.log(localStorage.getItem('ruaCliente'))
+            console.log(localStorage.getItem('numeroCliente'))
+            console.log(localStorage.getItem('cepCliente'))
+            
+            var rua = document.getElementById('nome-rua');
+            rua.innerText = localStorage.getItem('ruaCliente') + ", N° "
+
+            var numero = document.getElementById('numero'); 
+            numero.innerText = localStorage.getItem('numeroCliente') + ", CEP "
+
+            var cep = document.getElementById('cep'); 
+            cep.innerText = localStorage.getItem('cepCliente')
+        }
+
+
+        // Seleciona o formulário pelo ID
+        var formulario = document.querySelector('form');
+
+        // Função para percorrer os elementos de entrada e obter o valor selecionado
+        function obterOpcaoSelecionada() {
+            // Obtém todos os elementos de entrada dentro do formulário
+            var elementosInput = formulario.elements;
+
+            // Itera sobre os elementos de entrada
+            for (var i = 0; i < elementosInput.length; i++) {
+                var elemento = elementosInput[i];
+
+                // Verifica se o elemento é um input do tipo radio e se está selecionado
+                if (elemento.type === 'radio' && elemento.checked) {
+                    // Retorna o valor do input selecionado
+                    var formaPagamento = document.getElementById('pagamento');
+                    formaPagamento.innerText = elemento.value
+                    localStorage.setItem('formaPagamento', elemento.value);
+                    $("#modalFormaPagamento").hide()
+                }
+            }
+        }
+
+        function montarTextoEnviar() {
+            var valorTotalFormatado = localStorage.getItem('valorTotal').replace(".", ",")
+            var texto = ""
+            texto = "*Meu Pedido* \n \n"
+            texto = texto + localStorage.getItem('textoProdutosCarrinho') + "\n"
+            texto = texto + "----------------\n"
+            texto = texto + "*Total de peças:* " + localStorage.getItem('qtdTotalPecas') + "\n"
+            texto = texto + "*Valor Total:* R$ " + valorTotalFormatado + "\n"
+            texto = texto + "*Forma de Pagamento:* " + localStorage.getItem('formaPagamento') + "\n \n"
+            texto = texto + "*Nome:* " + localStorage.getItem('nomeCliente') + "\n"
+            texto = texto + "*Celular:* " + localStorage.getItem('whatsCliente') + "\n"
+            texto = texto + "*Endereço:* " + localStorage.getItem('ruaCliente')
+            texto = texto + ", *N°* " + localStorage.getItem('numeroCliente')
+            texto = texto + ", *CEP* " + localStorage.getItem('cepCliente') + "\n"
+            console.log(texto)
+            return texto
+        }
+
+        // Obtendo o elemento <a> pelo seu ID
+        var linkWhatsapp = document.getElementById("link-whatsapp");
+
+        // Adicionando um evento de clique ao elemento <a>
+        linkWhatsapp.addEventListener("click", function(event) {
+            // Evitando que o link seja seguido
+            event.preventDefault();
+
+            // Obtendo o texto dinâmico do JavaScript
+            var texto = montarTextoEnviar();
+
+            // Concatenando o texto dinâmico ao URL do WhatsApp
+            var url = "https://api.whatsapp.com/send?phone=5518997732200&text=" + encodeURIComponent(texto);
+
+            // Redirecionando para o URL do WhatsApp
+            window.location.href = url;
+        });
+
+
+
     </script>
     
 </body>
