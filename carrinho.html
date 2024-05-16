@@ -148,7 +148,7 @@
             
             <div ID="lista-prod-carrinho">
 
-                <!--
+                <!-- 
                 <div class="container" ID="produto_1" style="margin-left: 0; margin-right: 0; max-width: 100%; padding-right: 15px;">                                
                     <div class="row span_12 componente-produto">
                         
@@ -179,11 +179,12 @@
                         </div>  
                         
                         <div class="col span_1" style="max-width: 8em;">
-                            <img src="img/excluir.png" alt="Excluir produto" class="img-fluid" style="margin-top: 160%; height: 60px; width: 60px;">
+                            <img ID="img_produto_1" src="img/excluir.png" alt="Excluir produto" class="img-fluid" data-value="12345" onclick="excluirItemCarrinho('valor')" style="margin-top: 160%; height: 60px; width: 60px;">
                         </div>                        
                     </div>                    
                 </div> 
                 -->
+                
                 
             </div>
               
@@ -222,16 +223,14 @@
             </div>
 
             <div style="margin-top: 0.5em; margin-right: 0.5em; border-radius: 5px; padding-left: 2em; margin-bottom: 150px;">
-                <button ID="btn-adicionar" type="button" class="btn" data-dismiss="modal" onclick="montarTextoEnviar()" style="background-color: rgb(32, 172, 19); font-size: 40px; color: white; width: 100%; display: flex; justify-content: center; align-items: center; border-radius: 10px;">                    
-                    <span style="flex-grow: 1; text-align: center;">
-                        <img src="img/whatsapp.png" alt="Ícone de adicionar" style="height: 50px; font-size: 40px; justify-content: right; align-items: right;">
-                        Enviar Pedido
-                        <a id="link-whatsapp" href="#">Enviar mensagem</a>
-
-                        <!--<a href="https://api.whatsapp.com/send?phone=5518997732200&text=Teste%20de%20mensagem">Enviar mensagem</a>-->
-
+                <button ID="btn-adicionar" type="button" class="btn" data-dismiss="modal" onclick="montarTextoEnviar()" style="background-color: rgb(32, 172, 19); font-size: 60px; color: white; width: 100%; display: flex; justify-content: center; align-items: center; border-radius: 15px; padding-bottom: 20px;">                    
+                    <span style="flex-grow: 1; text-align: center;">                                               
+                        <a id="link-whatsapp" href="#" style="text-decoration: none; height: 50px; font-size: 40px; color: white; font-weight: bold;">
+                            <img src="img/whatsapp.png" alt="Ícone de adicionar" style="height: 50px; font-size: 40px; justify-content: right; align-items: right;"> 
+                            Enviar Pedido
+                        </a>
                     </span>
-                </button>
+                </button>                
             </div>
             
 
@@ -726,6 +725,10 @@
             imgExcluir.style.marginTop = "160%"
             imgExcluir.style.height = "60px"
             imgExcluir.style.width = "60px"
+            imgExcluir.setAttribute("data-value", idProduto)
+            imgExcluir.onclick = function() {
+                excluirItemCarrinho(imgExcluir.getAttribute("data-value"));
+            };
 
             div10.appendChild(imgExcluir)
             div2.appendChild(div10)
@@ -949,6 +952,36 @@
         });
 
 
+        function excluirItemCarrinho(idProdutodataValue){
+            
+            console.log("valor q veio por parametro " + idProdutodataValue)
+
+            percorreProdutosCarrinhoExclui(idProdutodataValue)
+
+            // Recarrega a página atual
+            location.reload();
+
+        }
+
+        function percorreProdutosCarrinhoExclui(idProdutoExcluir){
+
+            var produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+            // Percorre o array de produtos
+            for (var i = 0; i < produtos.length; i++) {
+                // Acessa o nome do produto e imprime no console observacoes
+
+                if (produtos[i].id == idProdutoExcluir){
+                    produtos.splice(i, 1);
+                    // Saí do loop pois o item foi encontrado e removido
+                    console.log("excluido com sucesso")
+                    break;
+                }
+
+            }
+
+            // Atualiza o localStorage com o novo array de produtos
+            localStorage.setItem('produtos', JSON.stringify(produtos));
+        }
 
     </script>
     
