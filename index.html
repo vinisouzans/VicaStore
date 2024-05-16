@@ -212,9 +212,15 @@
         .modal-dialog {
             max-width: 100%;
             max-height: 100%;
-            margin-top: 10em;
+            margin-top: 5em;
             margin-left: 0.5em;
             margin-right: 0.5em;
+        }
+
+        .scrollable-div {
+            width: 100vw; /* largura igual à largura da viewport */
+            height: 100vh; /* altura igual à altura da viewport */
+            overflow: auto; /* adiciona barras de rolagem quando necessário */
         }
 
         .sessao {
@@ -242,10 +248,10 @@
         .div-foto-modal{
             margin: 0.5em; 
             border-radius: 5px; 
-            max-height: 40em; 
-            max-width: 30em; 
-            margin-left: 12em; 
-            margin-bottom: 5em;
+            max-height: 70%;
+            max-width: 75%; 
+            margin-left: 3em; 
+            margin-bottom: 1em;
         }
 
         .div-foto-modal img{
@@ -278,6 +284,23 @@
             margin: 1em;
         }
 
+        /* Estilo do balão flutuante */
+        #successBalloon {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(129, 230, 129, 0.815);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+            font-size: 40px;
+        }
+
     </style>
 </head>
 <body>
@@ -291,6 +314,8 @@
         <!-- Seu conteúdo aqui -->
         <h3 class="titulo-loja" alt="ViCa Store">ViCa Store</h3>
         <p class="tempo-entrega" alt="Roupas esportivas legging academia">Roupas fitness, ideal para diversas práticas esportivas.</p>
+
+        <div id="successBalloon">Adicionado ao carrinho!</div>
 
         <h2 class="titulo-categoria" alt="Sessão Calças Leggings">Calças Leggings</h2>
 
@@ -598,9 +623,9 @@
     </nav>        
 
     <!-- Modal Produto-->
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content bg-warning"> <!-- Adicione a classe bg-warning aqui -->
+    <div class="modal scrollable-div" id="myModal">
+        <div class="modal-dialog ">
+            <div class="modal-content bg-warning">
                           
                 <!-- Modal Body -->
                 <div class="modal-body container span_12 div-modal">
@@ -649,36 +674,27 @@
                     <p ID="msg-tamanho-selecionar" style="font-size: 30px; color: red; visibility: hidden;">Nenhum tamanho foi selecionado.</p>
                 
                     <div class="marg-1em">
-                        <b style="font-size: 25px;">Observação</b>
+                        <b style="font-size: 30px;">Observação</b>
                     </div>
                 
                     <div class="row marg-1em">
                         <div class="col">
-                            <textarea ID="obs-produto" class="form-control"></textarea>
+                            <textarea ID="obs-produto" class="form-control" style="font-size: 35px;"></textarea>
                         </div>
                     </div>                
                 </div>
                 
                 
                 <!-- Modal Footer -->
-                <div class="modal-footer d-flex justify-content-between">
-                    <div ID="divQuantidadeProduto">
-                        <a class="navbar-brand" href="#" style="margin-right: 0;" onclick="diminuirQuantidade()">
-                            <img src="img/botao-de-menos.png" style="width: 45px; height: 45px;" alt="Diminuir quantidade">                        
-                        </a>                    
-                        <b ID="quantidade-Produto" style="margin: 1em; font-size: 30px;">1</b>
-                        <a class="navbar-brand" href="#" onclick="aumentarQuantidade()">
-                            <img src="img/botao-mais.png" style="width: 45px; height: 45px;" alt="Aumentar quantidade">                        
-                        </a>
-                    </div>
+                <div class="modal-footer d-flex justify-content-between">         
+                    <div></div>                  
                     <div>
-                        <button ID="btn-adicionar" type="button" class="btn btn-dark" data-dismiss="modal" style="background-color: black; font-size: 30px;">
-                            <img src="img/carrinho-branco.png" alt="Ícone de adicionar" style="width: 35px; height: 35px; margin-right: 5px;">Adicionar
+                        <button ID="btn-adicionar" type="button" class="btn btn-dark" data-dismiss="modal" style="background-color: black; font-size: 40px;">
+                            <img src="img/carrinho-branco.png" alt="Ícone de adicionar" style="width: 40px; height: 40px; margin-right: 5px;">Adicionar
                         </button>
                     </div>               
                 </div>
 
-                
             </div>
         </div>
     </div>
@@ -886,31 +902,6 @@
         elementoSelecionado.classList.add('selecionado');
         }
 
-        function aumentarQuantidade() {
-            var quantidadeProdutoElement = document.getElementById('quantidade-Produto');
-            var quantidadeProdutoTexto = quantidadeProdutoElement.innerText;
-            var quantidadeProdutoInt = parseInt(quantidadeProdutoTexto);
-
-            quantidadeProdutoInt++;
-
-            var novaQuantidadeTexto = quantidadeProdutoInt.toString();
-            quantidadeProdutoElement.innerText = novaQuantidadeTexto;
-        }
-
-        function diminuirQuantidade() {
-            var quantidadeProdutoElement = document.getElementById('quantidade-Produto');
-            var quantidadeProdutoTexto = quantidadeProdutoElement.innerText;
-            var quantidadeProdutoInt = parseInt(quantidadeProdutoTexto);
-
-            if (quantidadeProdutoInt > 1) {
-                quantidadeProdutoInt--;
-                var novaQuantidadeTexto = quantidadeProdutoInt.toString();
-                quantidadeProdutoElement.innerText = novaQuantidadeTexto;
-            }
-                                  
-        }
-
-
         document.getElementById('btn-adicionar').addEventListener('click', function() {
             // Obtém o nome do produto
             var nomeProduto = document.getElementById('nome-item-modal').innerText;
@@ -925,10 +916,8 @@
             var textoDigitado = textarea.value;
             localStorage.setItem('obsProdutoEscolhido', textoDigitado);
 
-            var quantidadeProduto = document.getElementById('quantidade-Produto').innerText;
-            localStorage.setItem('qtdProdutoEscolhido', quantidadeProduto); 
+            localStorage.setItem('qtdProdutoEscolhido', "1"); 
             
-            //file:///C:/Users/vini_/Documents/Estudos/ModaFitnes/img/produtos/legging-basica-verde-agua.webp
             var foto = document.getElementById('img-1')
             var srcFoto = foto.src;
             srcFoto = srcFoto.replace("file:///C:/Users/vini_/Documents/Estudos/ModaFitnes/","")
@@ -961,7 +950,7 @@
                 nome: nomeProduto,
                 preco: precoProduto,
                 observacoes: textoDigitado,
-                quantidade: quantidadeProduto,
+                quantidade: "1",
                 srcFoto: srcFoto,
                 tamanho: tamanhoSelecionado
             };
@@ -977,8 +966,9 @@
             
             console.log(localStorage.getItem('produtos'))
 
-            // Redireciona para a página do carrinho
-            //window.location.href = 'carrinho.html';
+            $("#myModal").hide()
+
+            showSuccessBalloon()
         });
 
         function obterTamanhoSelecionado() {
@@ -998,7 +988,13 @@
             return null;
         }
 
-        
+        function showSuccessBalloon() {
+            var balloon = document.getElementById('successBalloon');
+            balloon.style.display = 'block';
+            setTimeout(function() {
+                balloon.style.display = 'none';
+            }, 2000); // 2000 ms = 2 segundos
+        }
         
     </script>
     
